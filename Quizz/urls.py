@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('quiz.urls')),  # ← ceci relie ton app quiz à l’URL racine
+    path('quiz/', include('quiz.urls')),  # ← ceci relie ton app quiz à l’URL racine
 ]
 
