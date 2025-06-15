@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from collections import Counter
 
 def quiz_view(request):
     questions = [
