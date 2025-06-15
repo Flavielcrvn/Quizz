@@ -14,20 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# from django.contrib import admin
-# from django.urls import path, include
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('', include('quiz.urls')),  # ← ceci relie ton app quiz à l’URL racine
-# ]
-
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('quiz/')),  # Redirige la racine vers /quiz/
-    path('quiz/', include('quiz.urls')),
+    path('', include('quiz.urls')),  # ← ceci relie ton app quiz à l’URL racine
 ]
+

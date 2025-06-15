@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-pktw9ff6s*rxdbfjys59qqludppzv02+%$p@9ua(7d-(_$xojr
 DEBUG = True
 
 ALLOWED_HOSTS = ['quizz-dxcb.onrender.com']
-
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 

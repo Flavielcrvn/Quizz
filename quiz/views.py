@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def home(request):
-    return HttpResponse("🎨 Quel musée est fait pour vous ?")
-
 def quiz_view(request):
     questions = [
         {
