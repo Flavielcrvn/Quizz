@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from quiz.views import quiz_view  # <-- important d'importer ta vue
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('quiz.urls')),  # ← ceci relie ton app quiz à l’URL racine
+    path('', quiz_view, name='quiz'),      # page d’accueil redirigée vers quiz
+    path('quiz/', quiz_view, name='quiz'), # aussi accessible via /quiz/
 ]
-
