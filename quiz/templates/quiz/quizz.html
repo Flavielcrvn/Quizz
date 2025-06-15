@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quizz du pôle Publics</title>
+</head>
+<body>
+    <h1>🎨 Quel musée est fait pour toi ?</h1>
+    <p> Voici un quizz ludique conçu pour t'orienter vers un type de musée qui pourrait le plus t'intéresser. </br> L’idée est de mêler personnalité, loisirs, curiosité et préférences sensorielles, pour ne pas se limiter à l’expérience culturelle classique.</p>
+    <form method="post">
+        {% csrf_token %}
+        {% for q in questions %}
+            <h3>{{ q.text }}</h3>
+            {% for key, label in q.choices.items %}
+                <label>
+                    <input type="radio" name="{{ q.id }}" value="{{ key }}"> {{ key }} : {{ label }}
+                </label><br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <button type="submit">Voir le résultat</button>
+    </form>
+</body>
+</html>
