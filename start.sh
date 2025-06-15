@@ -1,4 +1,6 @@
-export PORT=${PORT:-8000}  # Définit le port par défaut à 8000 si non défini (Render définit automatiquement PORT)
+#!/bin/bash
+
+export PORT=${PORT:-8000}
 
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
