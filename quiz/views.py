@@ -110,7 +110,7 @@ def quiz_view(request):
         }
         affichage = ""
         for lettre in gagnants:
-            affichage += f"<h2>Option {lettre}</h2>" + resultats[lettre] + "<hr>"
+            affichage += f"<h2>Majorité de {lettre}</h2>" + resultats[lettre] + "<hr>"
 
         return render(request, 'quiz/resultat.html', {'resultat': affichage})
 
